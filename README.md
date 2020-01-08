@@ -23,7 +23,29 @@ You can find a detailed [project rubric, here](https://review.udacity.com/#!/rub
 
 ---
 
-## Setup the Environment
+
+## Project summary
+
+In this project, we deploy a scalable ML API with CI/CD.  
+For ML, we use a given ML app trained with `sklearn` as a `flask` app.  
+Our CI/CD checks for now linting only with `pylint` and `hadolint`.  
+The app is in docker container and can be deployable in both docker and kubernetes.  
+
+Actual steps taken are as follows
+
+- Complete the Dockerfile
+- Run a Container & Make a Prediction
+- Improve Logging & Save Output
+- Upload the Docker Image
+- Configure Kubernetes to Run Locally
+- Deploy with Kubernetes and Save Output Logs
+- Delete Cluster
+- CircleCI Integration
+- README.md
+
+## How to run
+
+### Setup the Environment
 
 * Create a virtualenv and activate it
 * Run `make install` to install the necessary dependencies
@@ -34,9 +56,32 @@ You can find a detailed [project rubric, here](https://review.udacity.com/#!/rub
 2. Run in Docker:  `./run_docker.sh`
 3. Run in Kubernetes:  `./run_kubernetes.sh`
 
+Optionally, you can run `./make_prediction.sh` to test your deployment.
+
 ### Kubernetes Steps
 
 * Setup and Configure Docker locally
 * Setup and Configure Kubernetes locally
 * Create Flask app in Container
 * Run via kubectl
+
+
+## Project structure
+
+```
+├── Dockerfile: Main docker file
+├── Makefile: Collection of shell files
+├── README.md
+├── app.py: Python Flask app that runs ML job
+├── make_prediction.sh: Call a HTTP request to the app
+├── model_data
+│   ├── boston_housing_prediction.joblib
+│   └── housing.csv
+├── output_txt_files
+│   ├── docker_out.txt: Terminal output from docker
+│   └── kubernetes_out.txt: Terminal output from k8s
+├── requirements.txt
+├── run_docker.sh: Run the app in docker
+├── run_kubernetes.sh: Run the app in k8s
+└── upload_docker.sh: Upload our docker image
+```
