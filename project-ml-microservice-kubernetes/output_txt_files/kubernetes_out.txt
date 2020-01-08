@@ -1,0 +1,15 @@
+<paste log output from Kubernetes-mediated prediction, here>
+
+step 2
+Authenticating with existing credentials...
+Login Succeeded
+kubectl run --generator=deployment/apps.v1 is DEPRECATED and will be removed in a future version. Use kubectl run --generator=run-pod/v1 or kubectl create instead.
+Error from server (AlreadyExists): deployments.apps "devops-image-in-k8s" already exists
+step 3
+NAME                                  READY   STATUS    RESTARTS   AGE
+devops-image-in-k8s-7d75795b4-xv8d4   1/1     Running   0          38m
+step 4
+Password:
+Forwarding from 127.0.0.1:80 -> 80
+Forwarding from [::1]:80 -> 80
+Handling connection for 80
